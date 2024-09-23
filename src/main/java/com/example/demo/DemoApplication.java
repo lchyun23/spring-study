@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 @SpringBootApplication
 public class DemoApplication {
-    static void connect(String username, String password) {
+    static void connect(String username, String password) throws SQLException {
         if (username.equals("admin") && password.equals("1234")) {
             System.out.println("- Database is connected successfully.");
         } else {
@@ -14,7 +14,7 @@ public class DemoApplication {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         connect("admin", "1234");
         connect("user", "9876");
     }
