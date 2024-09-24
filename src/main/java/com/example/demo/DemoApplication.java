@@ -1,13 +1,14 @@
 package com.example.demo;
 
+import com.example.demo.member.Administrator;
 import com.example.demo.member.Member;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class DemoApplication {
     public static void main(String[] args) {
-        Member aaron = new Member("Aaron", "aaron@example.com");
-        Member baron = new Member("Baron", "baron@example.com");
+        Administrator aaron = new Administrator("Aaron", "aaron@example.com", "DEVELOPER");
+        Administrator baron = new Administrator("Baron", "baron@example.com", "DESIGNER");
 
         System.out.println("---");
         System.out.println(aaron);              // 객체
