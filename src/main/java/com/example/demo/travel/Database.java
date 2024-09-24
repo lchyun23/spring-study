@@ -9,7 +9,7 @@ import org.springframework.util.StringUtils;
 
 @Slf4j
 public class Database {
-    public void connect(String username, String password) {
+    public Database(String username, String password) {
         if (!StringUtils.hasLength(username)) {
             throw new UsernameException();
         }
