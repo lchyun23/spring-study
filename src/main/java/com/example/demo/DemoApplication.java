@@ -7,8 +7,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class DemoApplication {
     public static void main(String[] args) {
-        Administrator aaron = new Administrator("Aaron", "aaron@example.com", "DEVELOPER");
-        Administrator baron = new Administrator("Baron", "baron@example.com", "DESIGNER");
+        Member aaron = new Member();
+        aaron.setName("Aaron");
+        aaron.setEmail("aaron@example.com");
+        Member baron = new Member();
+        aaron.setName("Baron");
+        aaron.setEmail("baron@example.com");
 
         System.out.println("---");
         System.out.println(aaron);              // 객체
