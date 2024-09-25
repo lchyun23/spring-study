@@ -13,9 +13,7 @@ public class DemoApplication {
                 "aaron@example.com"
         );
         Member baron = Member.builder()
-                .id(2)
                 .name("Baron")
-                .age(20)
                 .email("baron@example.com")
                 .build();
 
