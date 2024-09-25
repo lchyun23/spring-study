@@ -16,6 +16,16 @@ public class Member {
     @Singular
     protected List<String> favorites;
 
+    public static class MemberBuilder {
+        public MemberBuilder age(int age) {
+            if (age >= 30) {
+                throw new RuntimeException("30세 이상은 설정 불가능합니다.");
+            }
+            this.age = age;
+            return this;
+        }
+    }
+
     public String toString() {
         return String.format("Member(id=%s, name=%s, age=%s, email=%s, favorites=%s)", id, name, age, email, favorites);
     }
