@@ -6,15 +6,17 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class DemoApplication {
     public static void main(String[] args) {
-        Member aaron = new Member(
-                1,
-                "Aaron",
-                10,
-                "aaron@example.com"
-        );
+        Member aaron = Member.builder()
+                .id(1)
+                .age(10)
+                .name("Aaron")
+                .email("aaron@example.com")
+                .build();
         Member baron = Member.builder()
-                .name("Baron")
                 .email("baron@example.com")
+                .name("Baron")
+                .age(20)
+                .id(2)
                 .build();
 
         System.out.println("---");
