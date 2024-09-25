@@ -1,6 +1,7 @@
 package com.example.demo.member;
 
 import java.time.LocalDate;
+import java.util.Collections;
 
 public class Administrator extends Member {
 
@@ -8,7 +9,7 @@ public class Administrator extends Member {
     private LocalDate allocatedAt;
 
     public Administrator(Integer id, String name, int age, String email, String role) {
-        super(id, name, age, email);
+        super(id, name, age, email, Collections.emptyList());
         this.role = role;
         this.allocatedAt = LocalDate.now();
     }
