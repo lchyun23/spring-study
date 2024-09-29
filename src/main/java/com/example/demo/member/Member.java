@@ -3,7 +3,7 @@ package com.example.demo.member;
 import lombok.*;
 
 @Getter
-@ToString
+@ToString(exclude = {"age", "email"})
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 public class Member {
     private Integer id;
