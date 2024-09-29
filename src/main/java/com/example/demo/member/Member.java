@@ -24,7 +24,7 @@ public class Member {
     }
 
     @AllArgsConstructor
-    public class Favorite {
+    public static class Favorite {
         private List<String> favorites;
     }
 }
