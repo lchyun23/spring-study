@@ -4,7 +4,7 @@ import lombok.ToString;
 
 import java.time.LocalDate;
 
-@ToString
+@ToString(callSuper = true)
 public class Administrator extends Member {
     private String role;
     private LocalDate allocatedAt;
