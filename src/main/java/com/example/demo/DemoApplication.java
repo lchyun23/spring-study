@@ -15,18 +15,23 @@ public class DemoApplication {
         Hero agility = new AgilityHero();
         Hero intelligence = new IntelligenceHero();
 
+        Map<String, Hero> hero_map = new HashMap<>();
+        hero_map.put("🟥", strength);
+        hero_map.put("🟩", agility);
+        hero_map.put("🟦", intelligence);
+
         System.out.println("- 🟥 힘 속성 영웅");
-        strength.attack();
-        strength.ultimate();
+        hero_map.get("🟥").attack();
+        hero_map.get("🟥").ultimate();
 //      strength.berserk(); // 인터페이스 공통 형상 메서드만 호출 가능 = 인터페이스 다형성(Polymorphism)
 
         System.out.println("- 🟩 민첩 속성 영웅");
-        agility.attack();
-        agility.ultimate();
+        hero_map.get("🟩").attack();
+        hero_map.get("🟩").ultimate();
 
         System.out.println("- 🟦 지능 속성 영웅");
-        intelligence.attack();
-        intelligence.ultimate();
+        hero_map.get("🟦").attack();
+        hero_map.get("🟦").ultimate();
 
         /* Collection 1) Array 배열 */
 //      String[] string_array = new String[3];                      // 길이 기반 Array 선언 (String 요소)
@@ -93,44 +98,41 @@ public class DemoApplication {
 //      integer_set.size();                         // 개수
 
         /* Collection 4) Map 세트 */
-        Map<Integer, String> string_map = new HashMap<>();          // 빈 Map 선언 (String 요소)
-        string_map.put(1, "1");
-        string_map.put(2, "2");
-        string_map.put(3, "3");
+//      Map<Integer, String> string_map = new HashMap<>();          // 빈 Map 선언 (String 요소)
+//      string_map.put(1, "1");
+//      string_map.put(2, "2");
+//      string_map.put(3, "3");
         /* 주의 : Arrays.asList 와 Map.of 으로 생성되는 Collection 은 Immutable 불변성이기에 수정 불가 - get, put, remove 등 불가 */
 //      Map<Integer, String> string_map = Map.of(1, "1", 2, "2", 3, "3");
-        string_map.get(3);                          // 조회
-        string_map.put(4, "4");                     // 추가
-        string_map.replace(4, "5");                 // 수정
-        string_map.remove(3);                       // 삭제
-        string_map.containsKey(1);                  // 포함
-        string_map.containsValue("1");              // 포함
-        string_map.entrySet();                      // - Entry = [Key, Value] (Set)
-        string_map.keySet();                        // - Key (Set)
-        string_map.values();                        // - Value (List)
-        string_map.clear();                         // 리셋
-        string_map.isEmpty();                       // 검사
-        string_map.size();                          // 개수
-        Map<Integer, Integer> integer_map = new HashMap<>();        // 빈 Map 선언 (Integer 요소)
-        integer_map.put(1, 1);
-        integer_map.put(2, 2);
-        integer_map.put(3, 3);
+//      string_map.get(3);                          // 조회
+//      string_map.put(4, "4");                     // 추가
+//      string_map.replace(4, "5");                 // 수정
+//      string_map.remove(3);                       // 삭제
+//      string_map.containsKey(1);                  // 포함
+//      string_map.containsValue("1");              // 포함
+//      string_map.entrySet();                      // - Entry = [Key, Value] (Set)
+//      string_map.keySet();                        // - Key (Set)
+//      string_map.values();                        // - Value (List)
+//      string_map.clear();                         // 리셋
+//      string_map.isEmpty();                       // 검사
+//      string_map.size();                          // 개수
+//      Map<Integer, Integer> integer_map = new HashMap<>();        // 빈 Map 선언 (Integer 요소)
+//      integer_map.put(1, 1);
+//      integer_map.put(2, 2);
+//      integer_map.put(3, 3);
         /* 주의 : Arrays.asList 와 Map.of 으로 생성되는 Collection 은 Immutable 불변성이기에 수정 불가 - get, put, remove 등 불가 */
 //      Map<Integer, Integer> integer_map = Map.of(1, 1, 2, 2, 3, 3);
-        integer_map.get(3);                         // 조회
-        integer_map.put(4, 4);                      // 추가
-        integer_map.replace(4, 5);                  // 수정
-        integer_map.remove(3);                      // 삭제
-        integer_map.containsKey(1);                 // 포함
-        integer_map.containsValue(1);               // 포함
-        integer_map.entrySet();                     // - Entry = [Key, Value] (Set)
-        integer_map.keySet();                       // - Key (Set)
-        integer_map.values();                       // - Value (List)
-        integer_map.clear();                        // 리셋
-        integer_map.isEmpty();                      // 검사
-        integer_map.size();                         // 개수
-
-        System.out.println(string_map);
-        System.out.println(integer_map);
+//      integer_map.get(3);                         // 조회
+//      integer_map.put(4, 4);                      // 추가
+//      integer_map.replace(4, 5);                  // 수정
+//      integer_map.remove(3);                      // 삭제
+//      integer_map.containsKey(1);                 // 포함
+//      integer_map.containsValue(1);               // 포함
+//      integer_map.entrySet();                     // - Entry = [Key, Value] (Set)
+//      integer_map.keySet();                       // - Key (Set)
+//      integer_map.values();                       // - Value (List)
+//      integer_map.clear();                        // 리셋
+//      integer_map.isEmpty();                      // 검사
+//      integer_map.size();                         // 개수
     }
 }
