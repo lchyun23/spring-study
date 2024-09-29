@@ -5,7 +5,7 @@ import lombok.*;
 @Getter
 @Setter
 @ToString(onlyExplicitlyIncluded = true, includeFieldNames = false)
-@NoArgsConstructor(access = AccessLevel.PUBLIC)
+@AllArgsConstructor(access = AccessLevel.PUBLIC)
 public class Member {
     @ToString.Include(name = "memberId")
     private Integer id;
