@@ -32,13 +32,45 @@ public class DemoApplication {
 
         /* Collection 1) Array 배열 */
 //      String[] string_array = new String[3];                      // 길이 기반 Array 선언 (String 요소)
-        String[] string_array = new String[]{"1", "2", "3"};        // 값 기반 Array 선언 (String 요소)
-        System.out.println(string_array.length);
+//      String[] string_array = new String[]{"1", "2", "3"};        // 값 기반 Array 선언 (String 요소)
+//      System.out.println(string_array.length);
 //      Integer[] integer_array = new Integer[3];                   // 길이 기반 Array 선언 (Integer 요소)
-        Integer[] integer_array = new Integer[]{1, 2, 3};           // 값 기반 Array 선언 (Integer 요소)
-        System.out.println(integer_array.length);
+//      Integer[] integer_array = new Integer[]{1, 2, 3};           // 값 기반 Array 선언 (Integer 요소)
+//      System.out.println(integer_array.length);
 
-        System.out.println(string_array);
-        System.out.println(integer_array);
+        /* Collection 2) List 리스트 */
+//      List<String> string_list = new ArrayList<>();               // 빈 List 선언 (String 요소)
+//      string_list.add("1");
+//      string_list.add("2");
+//      string_list.add("3");
+        List<String> string_list = Arrays.asList("1", "2", "3");    // 값 기반 List 선언 (String 요소)
+        string_list.get(3);                         // 조회
+        string_list.add("4");                       // 추가
+        string_list.set(3, "5");                    // 수정
+        string_list.remove(3);                      // 삭제
+        string_list.subList(0, 1);                  // 부분
+        string_list.sort(String::compareTo);        // 나열
+        string_list.contains("1");                  // 포함
+        string_list.clear();                        // 리셋
+        string_list.isEmpty();                      // 검사
+        string_list.size();                         // 개수
+//      List<Integer> integer_list = new ArrayList<>();             // 빈 List 선언 (Integer 요소)
+//      integer_list.add(1);
+//      integer_list.add(2);
+//      integer_list.add(3);
+        List<Integer> integer_list = Arrays.asList(1, 2, 3);        // 값 기반 List 선언 (Integer 요소)
+        integer_list.get(3);                        // 조회
+        integer_list.add(4);                        // 추가
+        integer_list.set(3, 5);                     // 수정
+        integer_list.remove(3);                     // 삭제
+        integer_list.subList(0, 1);                 // 부분
+        integer_list.sort(Integer::compareTo);      // 나열
+        integer_list.contains(1);                   // 포함
+        integer_list.clear();                       // 리셋
+        integer_list.isEmpty();                     // 검사
+        integer_list.size();                        // 개수
+
+        System.out.println(string_list);
+        System.out.println(integer_list);
     }
 }
