@@ -10,7 +10,9 @@ import lombok.Setter;
 public class Member {
     private Integer id;
     private String name;
+    @Setter
     private int age;
+    @Setter
     private String email;
 
 //  public Member(Integer id, String name, int age, String email) {
