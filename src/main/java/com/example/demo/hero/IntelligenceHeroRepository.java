@@ -16,8 +16,4 @@ public class IntelligenceHeroRepository implements HeroRepository<IntelligenceHe
         repository.put(hero.getName(), hero);
         return hero.getName();
     }
-
-    public void delete(String name) {
-        repository.remove(name);
-    }
 }
