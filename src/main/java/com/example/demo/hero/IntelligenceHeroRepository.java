@@ -1,11 +1,13 @@
 package com.example.demo.hero;
 
-import com.example.demo.hero.common.HeroRepository;
+import com.example.demo.hero.common.HeroCreateRepository;
+import com.example.demo.hero.common.HeroDeleteRepository;
+import com.example.demo.hero.common.HeroReadRepository;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class IntelligenceHeroRepository implements HeroRepository<IntelligenceHero, String> {
+public class IntelligenceHeroRepository implements HeroCreateRepository<IntelligenceHero, String>, HeroReadRepository<IntelligenceHero, String>, HeroDeleteRepository<IntelligenceHero, String> {
     public static Map<String, IntelligenceHero> repository = new HashMap<>();
 
     public IntelligenceHero findById(String name) {
