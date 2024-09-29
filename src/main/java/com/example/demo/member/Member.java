@@ -10,7 +10,7 @@ import lombok.Setter;
 public class Member {
     private Integer id;
     private String name;
-    @Setter
+    @Setter(AccessLevel.PRIVATE)
     private int age;
     @Setter
     private String email;
