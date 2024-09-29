@@ -1,10 +1,12 @@
 package com.example.demo.member;
 
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import java.time.LocalDate;
 
 @ToString(callSuper = true)
+@EqualsAndHashCode
 public class Administrator extends Member {
     private String role;
     private LocalDate allocatedAt;
