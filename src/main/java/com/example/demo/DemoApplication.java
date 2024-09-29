@@ -20,6 +20,7 @@ public class DemoApplication {
         hero_map.put("🟩", agility);
         hero_map.put("🟦", intelligence);
 
+        System.out.println("-- Map<String, Hero> hero_map --");
         System.out.println("- 🟥 힘 속성 영웅");
         hero_map.get("🟥").attack();
         hero_map.get("🟥").ultimate();
@@ -32,6 +33,24 @@ public class DemoApplication {
         System.out.println("- 🟦 지능 속성 영웅");
         hero_map.get("🟦").attack();
         hero_map.get("🟦").ultimate();
+
+        List<Hero> hero_list = new ArrayList<>();
+        hero_list.add(strength);
+        hero_list.add(agility);
+        hero_list.add(intelligence);
+
+        System.out.println("-- List<Hero> hero_list --");
+        System.out.println("- 🟥 힘 속성 영웅");
+        hero_list.get(0).attack();
+        hero_list.get(0).ultimate();
+
+        System.out.println("- 🟩 민첩 속성 영웅");
+        hero_list.get(1).attack();
+        hero_list.get(1).ultimate();
+
+        System.out.println("- 🟦 지능 속성 영웅");
+        hero_list.get(2).attack();
+        hero_list.get(2).ultimate();
 
         /* Collection 1) Array 배열 */
 //      String[] string_array = new String[3];                      // 길이 기반 Array 선언 (String 요소)
