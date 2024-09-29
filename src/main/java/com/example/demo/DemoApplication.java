@@ -3,6 +3,8 @@ package com.example.demo;
 import com.example.demo.member.Member;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.Arrays;
+
 @SpringBootApplication
 public class DemoApplication {
     public static void main(String[] args) {
@@ -15,5 +17,8 @@ public class DemoApplication {
         System.out.println(Member.MEMBER_TO_STRING_FORMAT); // * 앞글자 대문자 : Static 필드는 이렇게 호출하는것이 정상이다.
         System.out.println(member.toString(member));        // * 앞글자 소문자 : 물론 이렇게 호출할 수 있겠지만, 정상사용은 아님
         System.out.println(Member.toString(member));        // * 앞글자 대문자 : Static 메서드는 이렇게 호출하는것이 정상이다.
+
+        Member.Favorite non_static_favorite_1 = member.new Favorite(Arrays.asList("BOOK", "COOK"));
+        Member.Favorite non_static_favorite_2 = new Member().new Favorite(Arrays.asList("BOOK", "COOK"));
     }
 }
