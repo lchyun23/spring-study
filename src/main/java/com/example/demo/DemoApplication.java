@@ -69,30 +69,68 @@ public class DemoApplication {
 //      integer_list.size();                        // 개수
 
         /* Collection 3) Set 세트 */
-//      Set<String> string_set = new HashSet<>();                  // 빈 Set 선언 (String 요소)
+//      Set<String> string_set = new HashSet<>();                   // 빈 Set 선언 (String 요소)
 //      string_set.add("1");
 //      string_set.add("2");
 //      string_set.add("3");
-        Set<String> string_set = new HashSet<>(Arrays.asList("1", "2", "3"));
-        string_set.add("4");                        // 추가
-        string_set.remove("1");                     // 삭제
-        string_set.contains("1");                   // 포함
-        string_set.clear();                         // 리셋
-        string_set.isEmpty();                       // 검사
-        string_set.size();                          // 개수
-//      Set<Integer> integer_set = new HashSet<>();                // 빈 Set 선언 (Integer 요소)
+//      Set<String> string_set = new HashSet<>(Arrays.asList("1", "2", "3"));
+//      string_set.add("4");                        // 추가
+//      string_set.remove("1");                     // 삭제
+//      string_set.contains("1");                   // 포함
+//      string_set.clear();                         // 리셋
+//      string_set.isEmpty();                       // 검사
+//      string_set.size();                          // 개수
+//      Set<Integer> integer_set = new HashSet<>();                 // 빈 Set 선언 (Integer 요소)
 //      integer_set.add(1);
 //      integer_set.add(2);
 //      integer_set.add(3);
-        Set<Integer> integer_set = new HashSet<>(Arrays.asList(1, 2, 3));
-        integer_set.add(4);                         // 추가
-        integer_set.remove(3);                      // 삭제
-        integer_set.contains(1);                    // 포함
-        integer_set.clear();                        // 리셋
-        integer_set.isEmpty();                      // 검사
-        integer_set.size();                         // 개수
+//      Set<Integer> integer_set = new HashSet<>(Arrays.asList(1, 2, 3));
+//      integer_set.add(4);                         // 추가
+//      integer_set.remove(3);                      // 삭제
+//      integer_set.contains(1);                    // 포함
+//      integer_set.clear();                        // 리셋
+//      integer_set.isEmpty();                      // 검사
+//      integer_set.size();                         // 개수
 
-        System.out.println(string_set);
-        System.out.println(integer_set);
+        /* Collection 4) Map 세트 */
+        Map<Integer, String> string_map = new HashMap<>();          // 빈 Map 선언 (String 요소)
+        string_map.put(1, "1");
+        string_map.put(2, "2");
+        string_map.put(3, "3");
+        /* 주의 : Arrays.asList 와 Map.of 으로 생성되는 Collection 은 Immutable 불변성이기에 수정 불가 - get, put, remove 등 불가 */
+//      Map<Integer, String> string_map = Map.of(1, "1", 2, "2", 3, "3");
+        string_map.get(3);                          // 조회
+        string_map.put(4, "4");                     // 추가
+        string_map.replace(4, "5");                 // 수정
+        string_map.remove(3);                       // 삭제
+        string_map.containsKey(1);                  // 포함
+        string_map.containsValue("1");              // 포함
+        string_map.entrySet();                      // - Entry = [Key, Value] (Set)
+        string_map.keySet();                        // - Key (Set)
+        string_map.values();                        // - Value (List)
+        string_map.clear();                         // 리셋
+        string_map.isEmpty();                       // 검사
+        string_map.size();                          // 개수
+        Map<Integer, Integer> integer_map = new HashMap<>();        // 빈 Map 선언 (Integer 요소)
+        integer_map.put(1, 1);
+        integer_map.put(2, 2);
+        integer_map.put(3, 3);
+        /* 주의 : Arrays.asList 와 Map.of 으로 생성되는 Collection 은 Immutable 불변성이기에 수정 불가 - get, put, remove 등 불가 */
+//      Map<Integer, Integer> integer_map = Map.of(1, 1, 2, 2, 3, 3);
+        integer_map.get(3);                         // 조회
+        integer_map.put(4, 4);                      // 추가
+        integer_map.replace(4, 5);                  // 수정
+        integer_map.remove(3);                      // 삭제
+        integer_map.containsKey(1);                 // 포함
+        integer_map.containsValue(1);               // 포함
+        integer_map.entrySet();                     // - Entry = [Key, Value] (Set)
+        integer_map.keySet();                       // - Key (Set)
+        integer_map.values();                       // - Value (List)
+        integer_map.clear();                        // 리셋
+        integer_map.isEmpty();                      // 검사
+        integer_map.size();                         // 개수
+
+        System.out.println(string_map);
+        System.out.println(integer_map);
     }
 }
