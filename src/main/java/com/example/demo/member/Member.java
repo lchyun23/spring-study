@@ -5,12 +5,14 @@ import lombok.*;
 @Getter
 @Setter
 @ToString(onlyExplicitlyIncluded = true, includeFieldNames = false)
-@EqualsAndHashCode(of = {"id", "name"})
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 public class Member {
     @ToString.Include(name = "memberId")
+    @EqualsAndHashCode.Include
     private Integer id;
     @ToString.Include(rank = -1)
+    @EqualsAndHashCode.Include
     private String name;
     private int age;
     private String email;
