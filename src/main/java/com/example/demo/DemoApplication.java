@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.dto.MemberCreateRequestDto;
 import com.example.demo.member.Member;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -8,19 +9,10 @@ import java.util.List;
 @SpringBootApplication
 public class DemoApplication {
     public static void main(String[] args) {
-        Member aaron = Member.builder()
-                .name("Aaron")
-                .email("aaron@example.com")
-                .age(10)
-                .favorites(List.of("Game", "Animation"))
-                .build();
-        Member baron = Member.builder()
-                .name("Baron")
-                .email("baron@example.com")
-                .age(40)
-                .favorite("Book")
-                .favorite("Cook")
-                .build();
+        MemberCreateRequestDto requestDto = new MemberCreateRequestDto("Baron", "baron@example.com");
+
+        Member aaron = new Member(1, "Aaron", 10, "aaron@example.com");
+        Member baron = Member.from(requestDto);
 
         System.out.println("---");
         System.out.println(aaron);              // 객체
