@@ -3,20 +3,17 @@ package com.example.demo.member;
 import lombok.*;
 
 @Getter
+@Setter
 @ToString(onlyExplicitlyIncluded = true, includeFieldNames = false)
-@RequiredArgsConstructor(access = AccessLevel.PUBLIC)
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
 public class Member {
     @ToString.Include(name = "memberId")
-    private final Integer id;
+    private Integer id;
     @ToString.Include(rank = -1)
-    private final String name;
-    @Setter(AccessLevel.PRIVATE)
+    private String name;
     private int age;
-    @Setter
     private String email;
 
-//  public Member(Integer id, String name) {
-//      this.id = id;
-//      this.name = name;
+//  public Member() {
 //  }
 }
