@@ -3,7 +3,7 @@ package com.example.demo.member;
 import lombok.*;
 
 @Getter
-@ToString(onlyExplicitlyIncluded = true)
+@ToString(onlyExplicitlyIncluded = true, includeFieldNames = false)
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 public class Member {
     @ToString.Include(name = "memberId")
