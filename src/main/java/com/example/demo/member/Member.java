@@ -6,9 +6,9 @@ import lombok.*;
 @ToString(onlyExplicitlyIncluded = true)
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 public class Member {
-    @ToString.Include
+    @ToString.Include(name = "memberId")
     private Integer id;
-    @ToString.Include
+    @ToString.Include(rank = -1)
     private String name;
     @Setter(AccessLevel.PRIVATE)
     private int age;
