@@ -12,4 +12,8 @@ public class StrengthHero implements Hero {
     public void ultimate() {
         System.out.println("지진 생성");
     }
+
+    public void berserk() {
+        System.out.println("각성");
+    }
 }

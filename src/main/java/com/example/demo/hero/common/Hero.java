@@ -1,8 +1,8 @@
 package com.example.demo.hero.common;
 
 public interface Hero {
-    void attack();
+    public abstract void attack();
 
-    void ultimate();
+    public abstract void ultimate();
 }
 
