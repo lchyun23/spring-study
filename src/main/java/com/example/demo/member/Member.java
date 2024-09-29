@@ -7,13 +7,13 @@ import lombok.Setter;
 
 @Getter
 @AllArgsConstructor
-public class Member {
+public final class Member {
     private Integer id;
     private String name;
     private int age;
     private String email;
 
-    public final String toString() {
+    public String toString() {
         return String.format("Member(id=%s, name=%s, age=%s, email=%s)", this.id, this.name, this.age, this.email);
     }
 }
