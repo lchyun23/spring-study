@@ -1,8 +1,9 @@
 package com.example.demo.member;
 
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 
-@AllArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PUBLIC)
 public class Member {
     private Integer id;
     private String name;
