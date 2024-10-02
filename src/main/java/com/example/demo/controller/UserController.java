@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.service.User;
-import com.example.demo.service.UserServiceInterface;
+import com.example.demo.service.UserService;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -17,41 +17,19 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/users")
-@RequiredArgsConstructor
-@FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
 public class UserController {
-    UserServiceInterface userService;
-
-    @Autowired
-    private ApplicationContext applicationContext;
-
-    @GetMapping("/bean")
-    @ResponseBody
-    public String bean() {
-        return applicationContext.getBean(UserServiceInterface.class).toString();
-    }
+    UserService userService;
 
     @GetMapping("")
-    public String userPage(Model model) {
+    @ResponseBody
+    public List<User> list() {
         List<User> users = userService.findAll();
-        model.addAttribute("members", users);
-        return "/users/list";
+        return users;
     }
 
     @GetMapping("/1/detail")
-    public String detailPage(Model model) {
-        User user = userService.findById(1);
-        model.addAttribute("id", user.getId());
-        model.addAttribute("name", user.getName());
-        model.addAttribute("age", user.getAge());
-        model.addAttribute("job", user.getJob());
-        model.addAttribute("specialty", user.getSpecialty());
-        return "/users/detail";
-    }
-
-    @GetMapping("/1/data")
     @ResponseBody
-    public User detailData() {
+    public User detail() {
         User user = userService.findById(1);
         return user;
     }
