@@ -8,18 +8,18 @@ import lombok.RequiredArgsConstructor;
 public abstract class Hero {
     private final String name;
 
-    protected void printHero() {
+    protected final void printHero() {
         System.out.printf("[%s] ", this.name);
     }
 
-    public void heroAttack() {
+    public final void heroAttack() {
         printHero();
         attack();
     }
 
     protected abstract void attack();
 
-    public void heroUltimate() {
+    public final void heroUltimate() {
         printHero();
         attack();
     }

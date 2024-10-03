@@ -10,9 +10,9 @@ public class StrengthHero extends Hero {
         super(name);
     }
 
-    protected void printHero() {
-        System.out.print("[Strength Hero] ");
-    }
+//  protected void printHero() {
+//      System.out.print("[Strength Hero] ");
+//  }
 
     @Override
     protected void attack() {
