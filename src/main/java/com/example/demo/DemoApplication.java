@@ -3,9 +3,7 @@ package com.example.demo;
 import com.example.demo.hero.*;
 import com.example.demo.hero.common.Hero;
 import com.example.demo.principles.Ramen;
-import com.example.demo.principles.concretes.Noodle;
-import com.example.demo.principles.concretes.SinSoup;
-import com.example.demo.principles.concretes.Water;
+import com.example.demo.principles.concretes.*;
 import com.example.demo.type.MessageType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -18,6 +16,8 @@ public class DemoApplication {
         Ramen ramen = new Ramen(
                 new Water(),
                 new SinSoup(),
+                new GreenOnion(),
+                new SmallEgg(),
                 new Noodle()
         );
         ramen.make();
