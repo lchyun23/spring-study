@@ -2,6 +2,7 @@ package com.example.demo;
 
 import com.example.demo.hero.*;
 import com.example.demo.hero.common.Hero;
+import com.example.demo.type.MessageType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.*;
@@ -9,15 +10,15 @@ import java.util.*;
 @SpringBootApplication
 public class DemoApplication {
 
-    public static void createMessage(String message) {
-        System.out.println("당신에게 메세지를 보냅니다. : " + message);
+    public static void createMessage(MessageType type) {
+        System.out.println("당신에게 메세지를 보냅니다. : " + type.getMessage());
     }
 
     public static void main(String[] args) {
-        createMessage("안녕하세요.");
-        createMessage("사랑합니다.");
-        createMessage("감사합니다.");
-        createMessage("안녕히가세요.");
+//      createMessage("안녕하세요.");
+        createMessage(MessageType.LOVE);
+        createMessage(MessageType.THANKS);
+//      createMessage("안녕히가세요.");
     }
 
     public static void backup() {
