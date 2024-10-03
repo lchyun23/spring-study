@@ -15,7 +15,7 @@ public class DemoApplication {
     public static void main(String[] args) {
         Ramen ramen = new Ramen(
                 new Water(),
-                new SinSoup(),
+                new JinSoup(),
                 new GreenOnion(),
                 new SmallEgg(),
                 new Noodle()
