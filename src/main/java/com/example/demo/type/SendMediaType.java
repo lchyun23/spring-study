@@ -8,10 +8,9 @@ import lombok.experimental.FieldDefaults;
 @Getter
 @RequiredArgsConstructor
 @FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
-public enum MessageType {
-    LOVE("사랑합니다.", SendMediaType.SMS),
-    THANKS("감사합니다.", SendMediaType.EMAIL);
+public enum SendMediaType {
+    SMS("010-0000-0000"),
+    EMAIL("aaron@example.com");
 
-    String message;
-    SendMediaType media;
+    String sender;
 }
