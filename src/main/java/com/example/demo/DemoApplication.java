@@ -2,6 +2,7 @@ package com.example.demo;
 
 import com.example.demo.hero.*;
 import com.example.demo.hero.common.Hero;
+import com.example.demo.principles.Ramen;
 import com.example.demo.type.MessageType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -10,13 +11,18 @@ import java.util.*;
 @SpringBootApplication
 public class DemoApplication {
 
+    public static void main(String[] args) {
+        Ramen ramen = new Ramen();
+        ramen.make();
+    }
+
     public static void createMessage(String type) {
         MessageType messageType = MessageType.findByName(type);
         System.out.println("당신에게 메세지를 보냅니다. : " + messageType.getMessage());
         System.out.println("다음으로부터 전송되었습니다. : " + messageType.getMedia().getSender());
     }
 
-    public static void main(String[] args) {
+    public static void backup_enum() {
 //      createMessage("안녕하세요.");
         createMessage("LOVE");
         createMessage("THANKS");
