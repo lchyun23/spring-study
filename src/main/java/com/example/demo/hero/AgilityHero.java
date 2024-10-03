@@ -4,18 +4,23 @@ import com.example.demo.hero.common.Hero;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
-@Getter
-@RequiredArgsConstructor
 public class AgilityHero extends Hero {
-    private final String name;
+
+    public AgilityHero(String name) {
+        super(name);
+    }
+
+    protected void printHero() {
+        System.out.print("[Agility Hero] ");
+    }
 
     @Override
-    public void attack() {
+    protected void attack() {
         System.out.println("더블 어택");
     }
 
     @Override
-    public void ultimate() {
+    protected void ultimate() {
         System.out.println("연사");
     }
 }

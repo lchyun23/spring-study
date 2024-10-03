@@ -4,18 +4,23 @@ import com.example.demo.hero.common.Hero;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
-@Getter
-@RequiredArgsConstructor
 public class IntelligenceHero extends Hero {
-    private final String name;
+
+    public IntelligenceHero(String name) {
+        super(name);
+    }
+
+    protected void printHero() {
+        System.out.print("[Intelligence Hero] ");
+    }
 
     @Override
-    public void attack() {
+    protected void attack() {
         System.out.println("파이어볼");
     }
 
     @Override
-    public void ultimate() {
+    protected void ultimate() {
         System.out.println("메테오");
     }
 }
