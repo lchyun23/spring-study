@@ -14,4 +14,14 @@ public enum MessageType {
 
     String message;
     SendMediaType media;
+
+    public static MessageType findByName(String name) {
+//      for (Element : Collection) = Enhanced For Loop
+        for (MessageType each : MessageType.values()) {
+            if (each.name().equals(name)) {
+                return each;
+            }
+        }
+        throw new RuntimeException("ENUM 내 존재하지 않는 이름입니다 : " + name);
+    }
 }
