@@ -8,14 +8,19 @@ import jakarta.validation.Valid;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Slf4j
 @Controller
 @RequestMapping("/users")
 @RequiredArgsConstructor
@@ -52,15 +57,19 @@ public class UserController {
 
     @GetMapping("/data")
     @ResponseBody
-    public UserResponseDto detailData(@RequestParam Integer id) {
+    public ResponseEntity<UserResponseDto> detailData(@RequestParam Integer id) {
         UserResponseDto user = userService.findById(id);
-        return user;
+        return ResponseEntity
+                .status(HttpStatusCode.valueOf(200))
+                .body(user);
     }
 
     @PostMapping("")
     @ResponseBody
-    public UserResponseDto save(@RequestBody @Valid UserCreateRequestDto request) {
+    public ResponseEntity<UserResponseDto> save(@RequestBody @Valid UserCreateRequestDto request) {
         UserResponseDto user = userService.save(request.getName(), request.getAge(), request.getJob(), request.getSpecialty());
-        return user;
+        return ResponseEntity
+                .status(HttpStatus.CREATED/* HTTP Status Code 상태 */)
+                .body(user/* UserResponseDto 데이터 */);
     }
 }
